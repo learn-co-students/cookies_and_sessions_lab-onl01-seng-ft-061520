@@ -1,0 +1,21 @@
+  <div>
+    Your Cart:
+    <ul>
+
+      <% session[:cart].each do |item| %>
+      <li>
+        <%= item %>
+      </li>
+      <% end %>
+
+    </ul>
+  </div>
+
+  <div>
+    Add an Item:
+    <%= form_tag products_path do %>
+    <%= label_tag :product %>
+    <%= text_field_tag :product %>
+    <%= submit_tag "add to cart" %>
+    <% end %>
+  </div>
